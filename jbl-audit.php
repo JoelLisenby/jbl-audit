@@ -261,6 +261,10 @@ class JBLAudit {
     );
   }
 
+  /* function get_sizes()
+  * This function is directly pulled from the WordPress health check feature with slight modifications.
+  * See: https://github.com/WordPress/health-check/blob/master/src/includes/class-health-check-debug-data.php
+  */
   public static function get_sizes() {
     $size_db    = self::get_database_size();
     $upload_dir = wp_get_upload_dir();
@@ -388,6 +392,10 @@ class JBLAudit {
       return $all_sizes;
   }
 
+  /* function get_database_size()
+  * This function is directly pulled from the WordPress health check feature.
+  * See: https://github.com/WordPress/health-check/blob/master/src/includes/class-health-check-debug-data.php
+  */
   public static function get_database_size() {
 		global $wpdb;
 		$size = 0;
@@ -402,6 +410,10 @@ class JBLAudit {
 		return (int) $size;
   }
   
+  /* function recurse_dirsize( ... )
+  * This function is directly pulled from the WordPress health check feature with slight modifications.
+  * See: https://github.com/WordPress/health-check/blob/master/src/includes/class-health-check-debug-data.php
+  */
   public static function recurse_dirsize( $directory, $exclude = null, $max_execution_time = null ) {
 		$size = 0;
 		$directory = untrailingslashit( $directory );

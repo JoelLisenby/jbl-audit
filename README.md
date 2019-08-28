@@ -11,3 +11,5 @@ Audited details include
 * WordPress Files and Database Sizes
 * SSL Certificate (https) check
 * Name Servers
+
+Access the Audit report from Tools -> JBL Audit
