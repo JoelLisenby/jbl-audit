@@ -1,0 +1,23 @@
+.jbl-audit {
+  padding: 1em;
+  color: #000;
+  background-color: #fff !important;
+  font-family: sans-serif !important;
+  font-size: 1em;
+}
+.jbl-audit * {
+  color: #000;
+  background-color: #fff !important;
+}
+.jbl-audit .items {
+  display: block;
+  margin: 1em 0;
+}
+.jbl-audit .items .item {
+  display: block;
+  padding: 1em 0;
+}
+.jbl-audit .items .item .label {
+  padding: 0.5em 0;
+  font-weight: bold;
+}
