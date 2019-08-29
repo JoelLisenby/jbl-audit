@@ -145,7 +145,7 @@ class JBLAudit {
     // active theme
     if ( array_key_exists( $active_theme->stylesheet, $theme_updates ) ) {
 			$theme_update_new_version = $theme_updates[ $active_theme->stylesheet ]->update['new_version'];
-			$active_theme_version       .= ' ' . sprintf( __( 'Active Theme Latest version: %s)', 'health-check' ), $theme_update_new_version );
+			$active_theme_version = $theme_update_new_version;
 
       $audit_items['wordpress_themes']['content'] .= ' ('. $active_theme->Version .' <strong>(Update Available: '. $active_theme_version .')</strong>';
     } else {
@@ -164,7 +164,7 @@ class JBLAudit {
 
 			if ( array_key_exists( $parent_theme->stylesheet, $theme_updates ) ) {
 				$parent_theme_update_new_version = $theme_updates[ $parent_theme->stylesheet ]->update['new_version'];
-				$parent_theme_version       .= ' ' . sprintf( __( '(Latest version: %s)', 'health-check' ), $parent_theme_update_new_version );
+				$parent_theme_version = $parent_theme_update_new_version;
 
         $audit_items['wordpress_themes']['content'] .= ' ('. $parent_theme->Version .', <strong>Update Available: '. $parent_theme_version .'</strong>)';
       } else {
@@ -190,11 +190,11 @@ class JBLAudit {
 			$theme_version = $theme->Version;
       $theme_author = $theme->Author;
       
-      $audit_items['wordpress_themes']['content'] .= '<li><stronG>Other Installed Theme:</strong> '. $theme_slug;
+      $audit_items['wordpress_themes']['content'] .= '<li><strong>Other Installed Theme:</strong> '. $theme_slug;
       
       if ( array_key_exists( $theme_slug, $theme_updates ) ) {
 				// translators: %s: Latest theme version number.
-				$theme_version_string       .= ' ' . sprintf( __( '(Latest version: %s)', 'health-check' ), $theme_updates[ $theme_slug ]->update['new_version'] );
+				$theme_version_string = $theme_updates[ $theme_slug ]->update['new_version'];
         
         $audit_items['wordpress_themes']['content'] .= ' ('. $theme_version .', <strong>Update Available: '. $theme_version_string .'</strong>)';
       } else {
